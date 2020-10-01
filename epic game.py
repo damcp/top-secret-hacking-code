@@ -1,23 +1,29 @@
-#made by: Daniel h., 5.10.219
+#made by: Daniel H., 5.10.219
+#Last name is written with a capital letter
 import random
 import time
 
 
 print("Säännöt: pelin tarkoituksena on saada kädessä olevien korttien arvo")
 print("         mahdollisimman lähelle lukua 21. Jos korttien arvo kuitenkin")
-print("         ylittää luvun 21, pelistä tippuu pois.")
-print("")
-print("")
+print("         ylittää luvun 21, pelistä tippuu pois.\n\n") #\n näyttää hienommalta kuin print("")
 time.sleep(3)
 
-print ("valitse pelaajien määrä, max 4 pelaajaa.")
+#jos laittaa pienemmän kuin 2, ei koodi toimi, joten se kannattaa mainita alussa
+#jos tässä syöttää mitään muuta kuin numeron, ohjelma kaatuu
+
 while True:
-    kpl=int(input())
-    if kpl==2: break
-    if kpl==3: break
-    if kpl==4: break
-    elif kpl<2: print("Pelaajamäärä on liian pieni.")
-    elif kpl>4: print("Pelaajamäärä on liian suuri.")
+    print ("valitse pelaajien määrä, 2-4 pelaajaa.")
+    määrä=int(input())
+    if määrä.isnumeric() == True:
+    # testataan onko pelaajien määrä numero
+        if kpl==2: break
+        if kpl==3: break
+        if kpl==4: break
+        elif kpl<2: print("Pelaajamäärä on liian pieni.")
+        elif kpl>4: print("Pelaajamäärä on liian suuri.")
+    else:
+        print("Ei ole numero\n")
 
 time.sleep(1)
     
@@ -67,7 +73,11 @@ if kpl>=2:
             print(käsi1)
 
         a2=sum(käsi1)
-        if valinta1=="L":break
+        if valinta1=="L":
+            break
+            
+        if valinta1 != "U": print("Ei tunnistettu valinnaksi")
+        #jos syöttää jotain mikä ei ole valinta, tämä tulostetaan
     
         if a2>21:print("Korttisi arvo on yli 21!"),käsi1.clear(),käsi1.append("poissa pelistä")
         if a2>21:break
@@ -94,7 +104,11 @@ if kpl>=2:
 
     
         b2=sum(käsi2)
-        if valinta2=="L":break
+        if valinta2=="L":
+			break
+			
+		if valinta1 != "U": print("Ei tunnistettu valinnaksi")
+        #jos syöttää jotain mikä ei ole valinta, tämä tulostetaan
         
         if b2>21:print("Korttisi arvo on yli 21!"),käsi2.clear(),käsi2.append("poissa pelistä")
         if b2>21:break
@@ -120,7 +134,12 @@ if kpl>=3:
 
     
         c2=sum(käsi3)
-        if valinta3=="L":break
+        if valinta3=="L":
+			break
+			
+		if valinta1 != "U": print("Ei tunnistettu valinnaksi")
+        #jos syöttää jotain mikä ei ole valinta, tämä tulostetaan
+			
         if c2>21:print("Korttisi arvo on yli 21!"),käsi3.clear(),käsi3.append("poissa pelistä")
         if c2>21:break
         time.sleep(1)
@@ -145,7 +164,12 @@ if kpl>=4:
 
    
         d2=sum(käsi4)
-        if valinta4=="L":break
+        if valinta4=="L":
+			break
+			
+		if valinta1 != "U": print("Ei tunnistettu valinnaksi")
+        #jos syöttää jotain mikä ei ole valinta, tämä tulostetaan
+			
         if d2>21:print("Korttisi arvo on yli 21!"),käsi4.clear(),käsi4.append("poissa pelistä")
         if d2>21:break
         time.sleep(1)
@@ -183,5 +207,3 @@ if voittaja==a:print("Ensimmäinen pelaaja voitti!")
 if voittaja==b:print("Toinen pelaaja voitti!")
 if voittaja==c:print("Kolmas pelaaja voitti!")
 if voittaja==d:print("Neljäs pelaaja voitti!")
-
-
