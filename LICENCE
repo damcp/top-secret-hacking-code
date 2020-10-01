@@ -1,0 +1,6 @@
+import time
+
+print("Feel free to use the fork model, but don't put it into a microwave.")
+print(" ")
+time.sleep (1)
+print("Thank you for understanding.")
